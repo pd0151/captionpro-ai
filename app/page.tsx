@@ -37,7 +37,7 @@ Generate:
 4. 1 shot list for filming the ad
 5. 1 strong call to action
 
-Use this format exactly:
+Use this format exactly. Do NOT use bold, stars, or markdown formatting:
 
 CAPTIONS
 1.
