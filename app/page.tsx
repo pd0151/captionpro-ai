@@ -63,7 +63,7 @@ SHOT LIST
 4.
 5.
 
-CALL TO ACTION
+CALL TO ACTIONs
 `;
 
 try {
@@ -160,6 +160,24 @@ style={inputStyle}
 /* ---------- SECTION RENDER FUNCTION ---------- */
 
 function renderSection(text: string, start: string, end: string | null, title: string) {
+// 🔥 remove ** automatically
+const cleanText = text.replace(/\*\*/g, "");
+
+if (!cleanText.includes(start)) return null;
+
+let content = cleanText.split(start)[1];
+
+if (end && content.includes(end)) {
+content = content.split(end)[0];
+}
+
+return (
+<div style={cardStyle}>
+<h3 style={{ marginBottom: "10px" }}>{title}</h3>
+<pre style={textStyle}>{content.trim()}</pre>
+</div>
+);
+} {
 if (!text.includes(start)) return null;
 
 let content = text.split(start)[1];
